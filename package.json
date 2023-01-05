@@ -1,0 +1,48 @@
+{
+  "name": "@deneb-kaitos/sched",
+  "version": "0.0.0",
+  "description": "friendly calendar",
+  "type": "module",
+  "packageManager": "pnpm@7.21.0",
+  "engines": {
+    "node": "19.3.0",
+    "pnpm": "7.21.0"
+  },
+  "engineStrict": true,
+  "volta": {
+    "node": "19.3.0"
+  },
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "dockerize:back-end": "rm -rf sources/back-end/srv/WebsocketServer/node_modules && pnpm --prod --no-optional install -F ./sources/back-end/srv/WebsocketServer --virtual-store-dir sources/back-end/srv/WebsocketServer/node_modules/.pnpm",
+    "dockerize:front-end": "rm -rf sources/front-end/node_modules && pnpm install -F ./sources/front-end --virtual-store-dir sources/front-end/node_modules/.pnpm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://git@github.com:deneb-kaitos/sched.git"
+  },
+  "author": "Dmitry N. Medvedev <dmitry.medvedev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deneb-kaitos/sched/issues"
+  },
+  "homepage": "https://github.com/deneb-kaitos/sched/issues#readme",
+  "devDependencies": {
+    "@babel/core": "^7.20.7",
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/eslint-plugin": "^7.19.1",
+    "@babel/preset-env": "^7.20.2",
+    "eslint": "^8.31.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-import-resolver-node": "^0.3.6",
+    "eslint-module-utils": "^2.7.4",
+    "eslint-plugin-chai-friendly": "^0.7.2",
+    "eslint-plugin-es": "^4.1.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-rule-composer": "^0.3.0",
+    "eslint-scope": "^7.1.1",
+    "eslint-utils": "^3.0.0",
+    "eslint-visitor-keys": "^3.3.0"
+  }
+}
