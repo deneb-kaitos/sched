@@ -1,0 +1,14 @@
+#!/bin/bash
+
+docker run \
+  --env PUBLIC_WS_PROTO=ws \
+  --env PUBLIC_WS_HOST=127.0.0.1 \
+  --env PUBLIC_WS_PORT=9090 \
+  --env PUBLIC_WEB_PROTO=http \
+  --env PUBLIC_WEB_HOST=localhost \
+  --env PUBLIC_WEB_PORT=5173 \
+  -d \
+  --name sched-front-end \
+  --rm \
+  -p 3000:3000 \
+  sched-front-end:latest
