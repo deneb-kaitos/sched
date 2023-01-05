@@ -1,5 +1,5 @@
 {
-  "name": "@deneb-kaitos/sched-front-end-browser",
+  "name": "@deneb-kaitos/sched-browser-front-end",
   "version": "0.0.0",
   "description": "[app] friendly calendar",
   "private": true,
