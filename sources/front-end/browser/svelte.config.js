@@ -13,7 +13,7 @@ const config = {
     },
     files: {
       hooks: {
-        server: 'src/files/hooks/hooks.server.mjs',
+        server: 'src/files/hooks/server.mjs',
       },
     },
   }
