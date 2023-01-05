@@ -70,8 +70,6 @@ importers:
       vite: 4.0.4
       vitest: 0.25.8
     dependenciesMeta:
-      '@dmitry-n-medvedev/common':
-        injected: true
       inter-ui:
         injected: true
 
