@@ -13,8 +13,7 @@
     "node": "19.3.0"
   },
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "dockerize:front-end": "rm -rf sources/front-end/browser/node_modules && pnpm --prod --no-optional install -F ./sources/front-end/browser --virtual-store-dir sources/front-end/browser/node_modules/.pnpm"
+    "preinstall": "npx only-allow pnpm"
   },
   "repository": {
     "type": "git",
