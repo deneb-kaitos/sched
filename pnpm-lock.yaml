@@ -42,7 +42,7 @@ importers:
     specifiers:
       '@playwright/test': ^1.29.1
       '@sveltejs/adapter-node': 1.1.0
-      '@sveltejs/kit': ^1.0.5
+      '@sveltejs/kit': ^1.0.7
       eslint: ^8.31.0
       eslint-config-prettier: ^8.6.0
       eslint-plugin-svelte3: ^4.0.0
@@ -56,8 +56,8 @@ importers:
       vitest: ^0.26.3
     devDependencies:
       '@playwright/test': 1.29.1
-      '@sveltejs/adapter-node': 1.1.0_@sveltejs+kit@1.0.5
-      '@sveltejs/kit': 1.0.5_svelte@3.55.0+vite@4.0.4
+      '@sveltejs/adapter-node': 1.1.0_@sveltejs+kit@1.0.7
+      '@sveltejs/kit': 1.0.7_svelte@3.55.0+vite@4.0.4
       eslint: 8.31.0
       eslint-config-prettier: 8.6.0_eslint@8.31.0
       eslint-plugin-svelte3: 4.0.0_6go7qzsvzihesfwmyvq3tnl5qq
@@ -1627,7 +1627,7 @@ packages:
       rollup: 3.9.1
     dev: true
 
-  /@sveltejs/adapter-node/1.1.0_@sveltejs+kit@1.0.5:
+  /@sveltejs/adapter-node/1.1.0_@sveltejs+kit@1.0.7:
     resolution: {integrity: sha512-br/KlTI24/TFOuQ+SmoTSfwzgWjslGXkSreOYALW8ElVsG8dAh8stDM07hDZjtQQ46r6snd2tev89Sagh8ZOtA==}
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
@@ -1635,12 +1635,12 @@ packages:
       '@rollup/plugin-commonjs': 24.0.0_rollup@3.9.1
       '@rollup/plugin-json': 6.0.0_rollup@3.9.1
       '@rollup/plugin-node-resolve': 15.0.1_rollup@3.9.1
-      '@sveltejs/kit': 1.0.5_svelte@3.55.0+vite@4.0.4
+      '@sveltejs/kit': 1.0.7_svelte@3.55.0+vite@4.0.4
       rollup: 3.9.1
     dev: true
 
-  /@sveltejs/kit/1.0.5_svelte@3.55.0+vite@4.0.4:
-    resolution: {integrity: sha512-8DXJiAaaW9FBaJ0i5MereT2nHN9ofTGsBO+N3RvFOPu2lc074DXu+SmGBX1Vw9zAdw5qL9j0y6GqRbYuH00PCg==}
+  /@sveltejs/kit/1.0.7_svelte@3.55.0+vite@4.0.4:
+    resolution: {integrity: sha512-u8JS4aXFWlrnu/tjl+EhJ/FvBEjLYDyMaLe7EAU4sW+PfDqnqyHBAPg/IQi5JuBg6l+Z816F4WrTe+zplUTQDg==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
