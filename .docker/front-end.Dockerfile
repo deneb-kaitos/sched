@@ -1,6 +1,5 @@
 ARG NODE_VERSION
 
-# FROM node:alpine3.16 AS system-setup
 FROM node:$NODE_VERSION-alpine AS system-setup
 RUN apk update \
   && apk upgrade
