@@ -42,16 +42,24 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: dockerize front-end
+        env:
+          PUBLIC_WS_PROTO: "ws"
+          PUBLIC_WS_HOST: "127.0.0.1"
+          PUBLIC_WS_PORT: "9090"
+          PUBLIC_WEB_PROTO: "http"
+          PUBLIC_WEB_HOST: "127.0.0.1"
+          PUBLIC_WEB_PORT: "3000"
+          PUBLIC_WEB_DEBUG_PORT: "5173"
         run: |
           echo "building docker image for the front-end"
           docker build \
-            --build-arg PUBLIC_WS_PROTO="ws" \
-            --build-arg PUBLIC_WS_HOST="127.0.0.1" \
-            --build-arg PUBLIC_WS_PORT="9090" \
-            --build-arg PUBLIC_WEB_PROTO="http" \
-            --build-arg PUBLIC_WEB_HOST="127.0.0.1" \
-            --build-arg PUBLIC_WEB_PORT="3000" \
-            --build-arg PUBLIC_WEB_DEBUG_PORT="5173" \
+            --build-arg PUBLIC_WS_PROTO=$PUBLIC_WS_PROTO \
+            --build-arg PUBLIC_WS_HOST=$PUBLIC_WS_HOST \
+            --build-arg PUBLIC_WS_PORT=$PUBLIC_WS_PORT \
+            --build-arg PUBLIC_WEB_PROTO=$PUBLIC_WEB_PROTO \
+            --build-arg PUBLIC_WEB_HOST=$PUBLIC_WEB_HOST \
+            --build-arg PUBLIC_WEB_PORT=$PUBLIC_WEB_PORT \
+            --build-arg PUBLIC_WEB_DEBUG_PORT=$PUBLIC_WEB_DEBUG_PORT \
             --file ./.docker/front-end.Dockerfile \
             --tag sched-front-end:latest \
             .
