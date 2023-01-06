@@ -40,6 +40,10 @@ html {
   html {
     font-family: var(--main-font-family);
   }
+
+  * {
+    font-variation-settings: 'slnt' 0;
+  }
 }
 
 body {
