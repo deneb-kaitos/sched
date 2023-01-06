@@ -1,4 +1,4 @@
-name: Node.js CI
+name: CI/CD
 
 on:
   # push:
@@ -35,3 +35,13 @@ jobs:
 
       - name: run tests
         run: pnpm --recursive test
+
+  dockerize-front-end:
+    runs-on: ubuntu-latest
+    needs: [run-specs]
+    steps:
+      - name: dockerize front-end
+        run: |
+          echo "building docker image for the front-end"
+          exit 1
+        
