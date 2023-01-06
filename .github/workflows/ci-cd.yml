@@ -40,6 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [run-specs]
     steps:
+      - uses: actions/checkout@v3
       - name: dockerize front-end
         run: |
           echo "building docker image for the front-end"
