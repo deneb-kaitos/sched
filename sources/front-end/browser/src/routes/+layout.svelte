@@ -1,10 +1,8 @@
 <script>
   import 'inter-ui/inter.css';
-
   import {
     env,
   } from '$env/dynamic/public';
-
   import {
     browser as IsInBrowser,
   } from '$app/environment';
@@ -22,10 +20,10 @@
   // } from '$lib/modules/ldr/ldr.mjs';
 
 
-  /** @type {Ldr | null} */
-  let ldr = null;
-  /** @type {WsStoreAdapter | undefined | null} */
-  let wsStoreAdapter = null;
+  // /** @type {Ldr | null} */
+  // let ldr = null;
+  // /** @type {WsStoreAdapter | undefined | null} */
+  // let wsStoreAdapter = null;
   const workersConfig = {
     wsWorker: {
       url: `${env.PUBLIC_WS_PROTO}://${env.PUBLIC_WS_HOST}:${env.PUBLIC_WS_PORT}/`,

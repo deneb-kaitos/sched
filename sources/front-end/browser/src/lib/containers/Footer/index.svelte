@@ -9,6 +9,7 @@
   //   TsStore,
   // } from '$lib/stores/ts.store.mjs';
 
+  /** @type {Number | null} */
   let lastTs = null;
 
   // const unsubscribeFromTsStore = TsStore.subscribe((/** @type {string | any[]} */ newState) => {
