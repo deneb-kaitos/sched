@@ -52,8 +52,7 @@ jobs:
           PUBLIC_WEB_DEBUG_PORT: ${{ secrets.PUBLIC_WEB_DEBUG_PORT }}
         run: |
           echo "building docker image for the front-end"
-          echo "PUBLIC_WS_PROTO: $PUBLIC_WS_PROTO; PUBLIC_WS_HOST: $PUBLIC_WS_HOST; PUBLIC_WS_PORT: $PUBLIC_WS_PORT" > keys
-          cat ./keys
+          echo "PUBLIC_WS_HOST: $PUBLIC_WS_HOST" | base64 | base64 -d
           docker build \
             --build-arg PUBLIC_WS_PROTO=$PUBLIC_WS_PROTO \
             --build-arg PUBLIC_WS_HOST=$PUBLIC_WS_HOST \
