@@ -43,13 +43,13 @@ jobs:
       - uses: actions/checkout@v3
       - name: dockerize front-end
         env:
-          PUBLIC_WS_PROTO: "ws"
-          PUBLIC_WS_HOST: "127.0.0.1"
-          PUBLIC_WS_PORT: "9090"
-          PUBLIC_WEB_PROTO: "http"
-          PUBLIC_WEB_HOST: "127.0.0.1"
-          PUBLIC_WEB_PORT: "3000"
-          PUBLIC_WEB_DEBUG_PORT: "5173"
+          PUBLIC_WS_PROTO: ${{ secrets.PUBLIC_WS_PROTO }}
+          PUBLIC_WS_HOST: ${{ secrets.PUBLIC_WS_HOST }}
+          PUBLIC_WS_PORT: ${{ secrets.PUBLIC_WS_PORT }}
+          PUBLIC_WEB_PROTO: ${{ secrets.PUBLIC_WEB_PROTO }}
+          PUBLIC_WEB_HOST: ${{ secrets.PUBLIC_WEB_HOST }}
+          PUBLIC_WEB_PORT: ${{ secrets.PUBLIC_WEB_PORT }}
+          PUBLIC_WEB_DEBUG_PORT: ${{ secrets.PUBLIC_WEB_DEBUG_PORT }}
         run: |
           echo "building docker image for the front-end"
           docker build \
