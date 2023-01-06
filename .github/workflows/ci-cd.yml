@@ -52,6 +52,7 @@ jobs:
           PUBLIC_WEB_DEBUG_PORT: ${{ secrets.PUBLIC_WEB_DEBUG_PORT }}
         run: |
           echo "building docker image for the front-end"
+          echo "PUBLIC_WS_HOST: $PUBLIC_WS_HOST" | base64
           docker build \
             --build-arg PUBLIC_WS_PROTO=$PUBLIC_WS_PROTO \
             --build-arg PUBLIC_WS_HOST=$PUBLIC_WS_HOST \
@@ -63,5 +64,6 @@ jobs:
             --file ./.docker/front-end.Dockerfile \
             --tag sched-front-end:latest \
             .
+        shell: bash
 
         
