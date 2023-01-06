@@ -43,6 +43,7 @@ jobs:
       - name: dockerize front-end
         run: |
           echo "building docker image for the front-end"
+          ls -la .
           docker build \
             --file ./.docker/front-end.Dockerfile \
             --tag sched-front-end:latest \
