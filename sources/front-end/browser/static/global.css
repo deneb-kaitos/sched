@@ -1,3 +1,5 @@
+@import "node_modules/inter-ui/inter.css";
+
 :root {
   --main-font-family: "Inter var experimental";
   --main-color: var(--theme-white);

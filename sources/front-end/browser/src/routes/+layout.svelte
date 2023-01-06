@@ -1,5 +1,4 @@
 <script>
-  import 'inter-ui/inter.css';
   import {
     env,
   } from '$env/dynamic/public';
@@ -32,6 +31,8 @@
 
   onMount(async () => {
     if (IsInBrowser === true) {
+
+      console.log('is mobile device:', window.matchMedia("(any-pointer: none)").matches);
 
       // @ts-ignore
       // ldr = new Ldr(workersConfig);
