@@ -43,7 +43,7 @@ RUN apk add --no-cache brotli \
     -exec gzip -9 -k '{}' \; \
     -exec brotli --best '{}' \;
 
-FROM node:alpine3.16 AS package-web-app
+FROM node:$NODE_VERSION-alpine AS package-web-app
 ENV NODE_ENV=production
 WORKDIR /app
 COPY --chown=node:node --from=build-all /repo/sources/front-end/browser/build .
