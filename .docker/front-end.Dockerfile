@@ -7,7 +7,7 @@ WORKDIR /repo
 ADD . ./
 RUN apk add --no-cache brotli \
   && corepack enable \
-  && corepack prepare pnpm@7.21.0 --activate \
+  && corepack prepare pnpm@7.22.0 --activate \
   && pnpm --recursive install \
   && rm -rf ./sources/front-end/browser/node_modules ./sources/front-end/browser/.svelte-kit rm -rf ./sources/front-end/browser/build \
   && pnpm install -F ./sources/front-end/browser --virtual-store-dir sources/front-end/browser/node_modules/.pnpm \

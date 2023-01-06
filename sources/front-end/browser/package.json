@@ -4,10 +4,10 @@
   "description": "[app] friendly calendar",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@7.21.0",
+  "packageManager": "pnpm@7.22.0",
   "engines": {
     "node": "19.3.0",
-    "pnpm": "7.21.0"
+    "pnpm": "7.22.0"
   },
   "engineStrict": true,
   "volta": {
