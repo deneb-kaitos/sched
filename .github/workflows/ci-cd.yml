@@ -43,6 +43,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: dockerize front-end
         env:
+          NODE_VERSION: ${{ secrets.NODE_VERSION }}
           PUBLIC_WS_PROTO: ${{ secrets.PUBLIC_WS_PROTO }}
           PUBLIC_WS_HOST: ${{ secrets.PUBLIC_WS_HOST }}
           PUBLIC_WS_PORT: ${{ secrets.PUBLIC_WS_PORT }}
@@ -52,6 +53,7 @@ jobs:
           PUBLIC_WEB_DEBUG_PORT: ${{ secrets.PUBLIC_WEB_DEBUG_PORT }}
         run: |
           docker build \
+            --build-arg NODE_VERSION=$NODE_VERSION \
             --build-arg PUBLIC_WS_PROTO=$PUBLIC_WS_PROTO \
             --build-arg PUBLIC_WS_HOST=$PUBLIC_WS_HOST \
             --build-arg PUBLIC_WS_PORT=$PUBLIC_WS_PORT \
