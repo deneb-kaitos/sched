@@ -4,26 +4,33 @@
   } from '$app/environment';
   import {
     onMount,
+    onDestroy,
   } from 'svelte';
+  import {
+    Temporal,
+  } from '@js-temporal/polyfill';
   import CalendarViewButton from '$lib/components/CalendarViewButton/index.svelte';
+  import {
+    TwoWeeksStore,
+  } from '$lib/stores/TwoWeeksStore/index.mjs';
 
-  const dayNames = ['mo', 'tu', 'we', 'th', 'fr', 'sa', 'su'];
   let days = [];
+
+  const unsubscribeFromTwoWeeksStore = TwoWeeksStore.subscribe((twoWeeksState) => {
+    days = twoWeeksState;
+  });
 
   const handleDayButtonClick = ({ detail: { id, name } }) => {
     console.log('handleDayButtonClick', id, name);
   }
 
   onMount(() => {
-    if (IsInBrowser === true) {
-      for (let d = 0; d < 14; d += 1) {
-        days.push({
-          id: window.crypto.randomUUID(),
-          name: dayNames[d % 7],
-        });
-      }
-  
-      days = days;
+
+  });
+
+  onDestroy(() => {
+    if (typeof unsubscribeFromTwoWeeksStore !== 'undefined') {
+      unsubscribeFromTwoWeeksStore();
     }
   });
 </script>
@@ -33,14 +40,15 @@
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: var(--main-grid-gap);
+    height: 100%;
   }
 </style>
 
 <div class='days-container'>
-  {#each days as day (day.id)}
+  
+  {#each days as d}
     <CalendarViewButton
-      id={day.id}
-      name={day.name}
+      id={d.toString()}
       on:click={handleDayButtonClick}
     />
   {/each}
