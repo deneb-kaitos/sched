@@ -23,25 +23,10 @@
 </script>
 
 <style>
-  #ts {
-    display: flex;
-    grid-area: ts;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.95rem;
-  }
-
-  @media screen and (max-height: 480px) and (orientation: landscape) {
-    #ts {
-      font-size: 1.25rem;
-    }
+  footer {
+    /* background-color: yellowgreen; */
   }
 </style>
 
 <footer>
-  <div id='ts'>
-    {#if lastTs}
-      {lastTs}
-    {/if}
-  </div>
 </footer>

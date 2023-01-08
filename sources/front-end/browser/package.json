@@ -25,15 +25,18 @@
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
     "format": "prettier --plugin-search-dir . --write ."
   },
+  "dependencies": {
+    "@js-temporal/polyfill": "^0.4.3",
+    "inter-ui": "^3.19.3"
+  },
   "devDependencies": {
-    "@playwright/test": "^1.29.1",
+    "@playwright/test": "^1.29.2",
     "@sveltejs/adapter-node": "1.1.0",
     "@sveltejs/kit": "^1.0.7",
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-svelte3": "^4.0.0",
-    "inter-ui": "^3.19.3",
-    "prettier": "^2.8.1",
+    "prettier": "^2.8.2",
     "prettier-plugin-svelte": "^2.9.0",
     "svelte": "^3.55.0",
     "svelte-check": "^3.0.1",
@@ -43,6 +46,9 @@
   },
   "dependenciesMeta": {
     "inter-ui": {
+      "injected": true
+    },
+    "@js-temporal/polyfill": {
       "injected": true
     }
   }
