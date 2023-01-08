@@ -11,6 +11,8 @@
   } from 'svelte';
   import Header from '$lib/containers/Header/index.svelte';
   import Footer from '$lib/containers/Footer/index.svelte';
+  import "inter-ui/inter.css";
+
   // import {
   //   WsStoreAdapter,
   // } from '$lib/modules/wsStoreAdapter/index.mjs';
@@ -18,21 +20,28 @@
   //   Ldr,
   // } from '$lib/modules/ldr/ldr.mjs';
 
-
   // /** @type {Ldr | null} */
   // let ldr = null;
   // /** @type {WsStoreAdapter | undefined | null} */
   // let wsStoreAdapter = null;
+
   const workersConfig = {
     wsWorker: {
       url: `${env.PUBLIC_WS_PROTO}://${env.PUBLIC_WS_HOST}:${env.PUBLIC_WS_PORT}/`,
     },
   };
 
-  onMount(async () => {
-    if (IsInBrowser === true) {
+  const handleUIChannelMessages = (/** @type {MessageEvent} */ uiMessage) => {
+    const {
+      data,
+    } = uiMessage;
+    console.log('handleUIChannelMessages', data);
+  }
 
-      console.log('is mobile device:', window.matchMedia("(any-pointer: none)").matches);
+  onMount(() => {
+    if (IsInBrowser === true) {
+      // uiBroadcastChannel.addEventListener('message', handleUIChannelMessages);
+      // isMobileDevice = IsInDevMode === true ? true : window.matchMedia("(any-pointer: none)").matches;
 
       // @ts-ignore
       // ldr = new Ldr(workersConfig);
@@ -44,7 +53,7 @@
     }
   });
 
-  onDestroy(async() => {
+  onDestroy(() => {
     if (IsInBrowser === true) {
       // await ldr?.stop();
 
