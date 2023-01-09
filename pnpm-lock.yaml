@@ -56,9 +56,11 @@ importers:
       typescript: ^4.9.4
       vite: ^4.0.4
       vitest: ^0.26.3
+      xstate: ^4.35.2
     dependencies:
       '@js-temporal/polyfill': 0.4.3
       inter-ui: 3.19.3
+      xstate: 4.35.2
     devDependencies:
       '@playwright/test': 1.29.2
       '@sveltejs/adapter-node': 1.1.0_@sveltejs+kit@1.0.7
@@ -78,6 +80,8 @@ importers:
       '@js-temporal/polyfill':
         injected: true
       inter-ui:
+        injected: true
+      xstate:
         injected: true
 
 packages:
@@ -4044,6 +4048,10 @@ packages:
   /wrappy/1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
     dev: true
+
+  /xstate/4.35.2:
+    resolution: {integrity: sha512-5X7EyJv5OHHtGQwN7DsmCAbSnDs3Mxl1cXQ4PVaLwi+7p/RRapERnd1dFyHjYin+KQoLLfuXpl1dPBThgyIGNg==}
+    dev: false
 
   /yallist/3.1.1:
     resolution: {integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==}

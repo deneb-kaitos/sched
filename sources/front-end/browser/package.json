@@ -27,7 +27,8 @@
   },
   "dependencies": {
     "@js-temporal/polyfill": "^0.4.3",
-    "inter-ui": "^3.19.3"
+    "inter-ui": "^3.19.3",
+    "xstate": "^4.35.2"
   },
   "devDependencies": {
     "@playwright/test": "^1.29.2",
@@ -50,6 +51,9 @@
       "injected": true
     },
     "@js-temporal/polyfill": {
+      "injected": true
+    },
+    "xstate": {
       "injected": true
     }
   }
