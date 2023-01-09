@@ -26,7 +26,7 @@ console.log({
 
 const currentDayOfWeekName = DaysOfWeekNames[Temporal.Now.zonedDateTimeISO().dayOfWeek - 1];
 const currentMonthName = MonthsNames[Temporal.Now.zonedDateTimeISO().month - 1];
-const currentWeekMondayDay = Temporal.Now.zonedDateTimeISO().day - Temporal.Now.zonedDateTimeISO().daysInWeek + 1;
+const currentWeekMondayDay = Temporal.Now.zonedDateTimeISO().day - Temporal.Now.zonedDateTimeISO().daysInWeek;
 
 console.log({ currentDayOfWeekName, currentMonthName, currentWeekMondayDay, date: `${Temporal.Now.zonedDateTimeISO().year}-${Temporal.Now.zonedDateTimeISO().month}-${Temporal.Now.zonedDateTimeISO().day}` });
 
