@@ -8,6 +8,7 @@
   } from 'svelte';
   import CalendarViewItem from '$lib/components/CalendarViewItem/index.svelte';
 
+  let isAuthenticated = false;
   let items = [];
 
   onMount(() => {
@@ -19,13 +20,13 @@
       });
       items.push({
         id: window.crypto.randomUUID(),
-        title: undefined,
-        isVirtual: true,
+        title: 'lemke',
+        isVirtual: false,
       });
       items.push({
         id: window.crypto.randomUUID(),
-        title: null,
-        isVirtual: true,
+        title: 'muha',
+        isVirtual: false,
       });
 
       items = items;
@@ -47,11 +48,15 @@
 </style>
 
 <article>
-  {#each items as item (item.id)}
-    <CalendarViewItem
-      id={item.id}
-      title={item.title}
-      isVirtual={item.isVirtual}
-    />
-  {/each}
+  {#if isAuthenticated === true}
+    {#each items as item (item.id)}
+      <CalendarViewItem
+        id={item.id}
+        title={item.title}
+        isVirtual={item.isVirtual}
+      />
+    {/each}
+  {:else}
+    not isAuthenticated
+  {/if}
 </article>
